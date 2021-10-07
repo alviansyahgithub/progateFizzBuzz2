@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Program FizzBuzz2</title>
+  </head>
+  <body>
+    <h1>Get a FizzBuzz Result!</h1>
+    <div>
+      <label for="input"> Type a number: </label>
+      <input type="text" id="number" />
+      <button onclick="fizzBuzz()">Click here!</button>
+    </div>
+    <hr />
+  </body>
+  <script>
+    function fizzBuzz() {
+      const input = document.getElementById("number").value;
+      let result;
+
+      if (input === "0") {
+        result = "Invalid input";
+      } else if (input % 3 === 0 && input % 5 === 0) {
+        result = "FizzBuzz!";
+      } else if (input % 3 === 0) {
+        result = "Fizz!";
+      } else if (input % 5 === 0) {
+        result = "Buzz!";
+      } else {
+        result = input;
+      }
+
+      input.value = "";
+      const para = document.createElement("p");
+      para.innerHTML = result;
+      document.body.appendChild(para);
+    }
+  </script>
+</html>
